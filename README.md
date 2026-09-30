@@ -1,22 +1,6 @@
-# java-week2-mini3
-import java.util.Scanner;
-public class TinyCompiler {
- public static void main(String[] args) {
- Scanner keyin = new Scanner(System.in);
- keyin.next(); // int
- keyin.next(); // result
- keyin.next(); // =
- int first = keyin.nextInt(); // 第一個整數 
- keyin.next(); // +
- int second = keyin.nextInt(); // 第二個整數
- keyin.next(); // ;
- int third = keyin.nextInt();
- keyin.next();
- System.out.println("MOVI R1, " + first);
- System.out.println("MOVI R2, " + second);
- System.out.println("ADD R0, R1, R2");
- System.out.println("MOVI R2, " + third);
- System.out.println("ADD R0, R0, R2");
- System.out.println("STORE [0], R0");
- }
-}
+README 回答：第一次 ADD 之後，為什麼能用第三個整數覆蓋 R2 ？
+ANS : 因為第一次ADD之後，已經將R1和R2的整數，存在R0，所以可直接用第三個整數覆蓋原本存在R2的整數
+
+README 回答：若輸入改成 int result=7+3+1; ，目前程式為什麼無法按預期讀 取？
+ANS :應為如果中間沒空格，會把它獨成一整個字串，而無法一個個讀出整數
+
